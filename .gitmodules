@@ -1,0 +1,3 @@
+[submodule "static/RobBot-Art"]
+	path = static/RobBot-Art
+	url = https://github.com/robbot-discord/RobBot-Art

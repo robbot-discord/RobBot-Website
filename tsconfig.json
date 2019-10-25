@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "outDir": "lib",
+    "jsx": "react",
+    "sourceMap": true,
+    "strict": true
+  },
+  "files": ["globals.d.ts"],
+  "include": ["src", "static"]
+}

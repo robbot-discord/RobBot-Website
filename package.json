@@ -1,0 +1,111 @@
+{
+  "author": "Robert Smieja",
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.25",
+    "@fortawesome/free-solid-svg-icons": "^5.11.2",
+    "@fortawesome/react-fontawesome": "^0.1.7",
+    "antd": "^3.24.2",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "react-router": "^5.1.2",
+    "react-router-dom": "^5.1.2"
+  },
+  "description": "Website for RobBot",
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/preset-env": "^7.6.3",
+    "@babel/preset-react": "^7.6.3",
+    "@babel/preset-typescript": "^7.6.0",
+    "@types/jest": "^24.0.19",
+    "@types/node": "^12.11.7",
+    "@types/react": "^16.9.10",
+    "@types/react-dom": "^16.9.2",
+    "@types/react-router-dom": "^5.1.0",
+    "@types/webpack-env": "^1.14.1",
+    "@typescript-eslint/eslint-plugin": "^2.5.0",
+    "@typescript-eslint/parser": "^2.5.0",
+    "babel-jest": "^24.9.0",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-import": "^1.12.2",
+    "bundle-loader": "^0.5.6",
+    "circular-dependency-plugin": "^5.2.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "cross-env": "^6.0.3",
+    "css-loader": "^3.2.0",
+    "eslint": "^6.5.1",
+    "eslint-config-prettier": "^6.4.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "^7.16.0",
+    "eslint-plugin-react-hooks": "^2.2.0",
+    "file-loader": "^4.2.0",
+    "fork-ts-checker-webpack-plugin": "^1.6.0",
+    "hard-source-webpack-plugin": "^0.13.1",
+    "html-webpack-plugin": "^3.2.0",
+    "husky": "^3.0.9",
+    "jest": "^24.9.0",
+    "less-loader": "^5.0.0",
+    "lint-staged": "^9.4.2",
+    "mini-css-extract-plugin": "^0.8.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.18.2",
+    "serve": "^11.2.0",
+    "source-map-loader": "^0.2.4",
+    "style-loader": "^1.0.0",
+    "terser-webpack-plugin": "^2.2.1",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.6.4",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.9.0",
+    "webpack-merge": "^4.2.2"
+  },
+  "engines": {
+    "node": ">=10",
+    "npm": ">=6"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": [
+        "lint-staged"
+      ]
+    }
+  },
+  "keywords": [
+    "typescript",
+    "nodejs",
+    "robbot",
+    "babel",
+    "webpack"
+  ],
+  "license": "MIT",
+  "lint-staged": {
+    "*.{js,ts,jsx,tsx,json,md}": [
+      "prettier --write",
+      "git add"
+    ],
+    "src/*.{js,ts,jsx,tsx}": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "main": "lib/index.js",
+  "name": "robbot-website",
+  "private": true,
+  "scripts": {
+    "build": "npm run-script build:prod",
+    "build:dev": "cross-env NODE_ENV=development webpack --config webpack.config.dev.js",
+    "build:prod": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js",
+    "lint": "eslint ./src/**/*",
+    "lint:fix": "eslint --fix ./src/**/*",
+    "lint:staged": "lint-staged",
+    "prettier": "prettier --write '*.{js,ts,jsx,tsx,json,md}'",
+    "serve": "serve dist/",
+    "start": "npm run-script start:dev",
+    "start:dev": "webpack-dev-server --config webpack.config.dev.js --color --progress",
+    "start:prod": "run-s build:prod serve",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "version": "0.1.0"
+}
