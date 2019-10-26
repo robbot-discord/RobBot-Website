@@ -12,8 +12,8 @@ RUN pip3 install awscli
 ARG awsAccessKeyId
 ARG awsSecretAccessKey
 
-RUN aws configure --set aws_access_key_id ${awsAccessKeyId} && \
-    aws configure --set aws_secret_access_key ${awsSecretAccessKey}
+RUN aws configure set aws_access_key_id ${awsAccessKeyId} && \
+    aws configure set aws_secret_access_key ${awsSecretAccessKey}
 
 COPY --from=build /home/node/dist/ .
 
