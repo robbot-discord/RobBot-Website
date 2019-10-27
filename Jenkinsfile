@@ -12,7 +12,15 @@ spec:
       command:
       - /busybox/sh
       tty: true
+      volumeMounts:
+      - name: jenkins-kaniko-cache
+        mountPath: /cache/
+    volumes:
+    - name: jenkins-kaniko-cache
+      persistentVolumeClaim:
+        claimName: jenkins-kaniko-cache-pv
 """
+
         }
     }
     
