@@ -18,7 +18,7 @@ RUN aws configure set aws_access_key_id ${awsAccessKeyId} && \
 COPY --from=build /home/node/dist/ .
 
 ARG targetS3Bucket
-RUN aws s3 cp . s3://${targetS3Bucket}/ --recursive 
+RUN aws s3 cp . s3://${targetS3Bucket}/ --recursive --acl public-read
 
 # Noop, we never want to save this container
 CMD ["/bin/sh"]
