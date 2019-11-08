@@ -7,10 +7,10 @@ kind: Pod
 spec:
     containers:
     - name: kaniko
-      image: gcr.io/kaniko-project/executor:debug
+      image: gcr.io/k8s-skaffold/skaffold:latest
       imagePullPolicy: IfNotPresent
       command:
-      - /busybox/sh
+      - cat
       tty: true
 """
         }
@@ -33,7 +33,6 @@ spec:
                 checkout([
                     $class: 'GitSCM',
                     branches: scm.branches,
-                    doGenerateSubmoduleConfigurations: true,
                     extensions: scm.extensions + [[$class: 'SubmoduleOption', parentCredentials: true]],
                     userRemoteConfigs: scm.userRemoteConfigs
                 ])
