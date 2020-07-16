@@ -2,7 +2,7 @@
   "author": "Robert Smieja",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.25",
-    "@fortawesome/free-solid-svg-icons": "^5.11.2",
+    "@fortawesome/free-solid-svg-icons": "^5.14.0",
     "@fortawesome/react-fontawesome": "^0.1.7",
     "antd": "^3.24.2",
     "react": "^16.11.0",
